@@ -1,5 +1,17 @@
 <html>
 <body>
-<p>Hello World</p>
+<script src="js/jquery-3.4.1.min.js"></script>
+<!--<div data-include="header"></div>-->
+<div data-include="content"></div>
+<!--<div data-include="footer"></div>-->
+<script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = 'src/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
 </body>
 </html>
